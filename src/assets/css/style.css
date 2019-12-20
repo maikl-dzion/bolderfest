@@ -11,7 +11,7 @@ body {
     width: 100%;
     grid-template-rows   : 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    /* background: url(../img/about_2.jpg) left top / 100% 100% no-repeat; */
+    background: url(../img/fon25.jpg) left top / 100% 100% no-repeat;
     /* background: url(../img/about_2.jpg) repeat ; */
 
 }
@@ -31,7 +31,6 @@ body {
     border:1px red solid;
     padding:3px;
 } 
-
 
 .header-container {
     grid-area: 1  /  1  / span 3  / span 30;

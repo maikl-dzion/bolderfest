@@ -3,7 +3,7 @@ import Axios from 'axios';
 const Http = {
     data: function () { 
         return { 
-            apiUrl : '',
+            apiUrl : apiUrl,
         }
     }, 
 

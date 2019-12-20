@@ -14,7 +14,7 @@
     </div>   -->
 
     <div class="left-sidebar"  >
-         left
+         <LeftSidebar/>
     </div>
 
     <div class="main-content" >
@@ -31,6 +31,30 @@
 
   </div>
 </template>
+
+<script>
+import ServicesLoader from "@/mixins/ServicesLoader";
+import LeftSidebar    from "@/components/LeftSidebar";
+
+export default {
+  name: "App",
+  mixins: [ServicesLoader],
+  data() {
+      return {
+         
+      };
+  },
+
+  methods: {
+     
+  },
+
+  components: { 
+    LeftSidebar 
+  },
+
+};
+</script>
 
 <style lang="scss" >
 
