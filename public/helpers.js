@@ -1,5 +1,3 @@
-
-
 function lg(arr) {
 
     var result = '---NOT ARRAY---';

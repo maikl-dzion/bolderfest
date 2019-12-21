@@ -15,8 +15,11 @@ import './assets/css/style.css'
 const EventGlobalBus = new Vue();
 Vue.config.productionTip = false;
 
+// var apiUrl  = 'http://bolderfest.ru/USER_REST_APPLICATIONS/api.php';
+
 new Vue({
   data  : {
+    apiUrl  : 'http://bolderfest.ru/USER_REST_APPLICATIONS/api.php',
     EventGlobalBus,
   },
   router,
