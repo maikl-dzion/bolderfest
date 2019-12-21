@@ -20,6 +20,11 @@ body {
     /* border:1px red solid; */
 }
 
+.main-content {
+    background: url(../img/about_2.jpg) left top / 100% 100% no-repeat;
+   
+}
+
 /* grid-area: top /  left / height / width    */
 /* grid-area: 2   /  2    / span 4 / span 10  */
 

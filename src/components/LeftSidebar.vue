@@ -1,6 +1,38 @@
 <template>
     <div>
-       <pre>{{siteMenu}}</pre>
+       <!-- <pre>{{siteMenu}}</pre> -->
+
+       <div style="display:block; padding:2px;" >
+           <img @click="siteMenuShow=!siteMenuShow" src="../assets/img/lm_prog.gif" style="margin:2px; border:0px white solid;" >
+           <!-- <img src="../assets/img/icon_2.png"  style="margin:2px; border:1px white solid;" > -->
+       </div>
+
+       <ul v-if="siteMenuShow" class="demo-list-icon mdl-list" style="background:white; margin:0px; padding:0px;" >
+
+            <template v-for="(menu, url) in siteMenu" >
+
+                <li :key="url" class="mdl-list__item"  style="margin:0px; padding:0px; min-height:0px">
+                    <a :href="'http://' + url" class="mdl-list__item-primary-content" target="_target" style="margin:0px; padding:0px; min-height:0px" >
+                       <i class="material-icons mdl-list__item-icon" style="margin:0px; padding:0px;" >bookmark_border</i>
+                       {{menu.title}}
+                    </a>
+                </li>
+
+                <li v-if="menu.submenu" style="margin:0px; padding:0px;" >
+                      <ul style="margin:0px 0px 0px 40px; padding:0px;" >
+                            <li v-for="(title, link) in menu.submenu" :key="link" class="mdl-list__item" style="margin:0px; padding:0px; min-height:0px">
+                                <a :href="link" class="mdl-list__item-primary-content" target="_target" style="margin:0px; padding:0px;" >
+                                <i class="material-icons mdl-list__item-icon" style="margin:0px; padding:0px;" >bookmark_border</i>
+                                   {{title}}
+                                </a>
+                            </li>
+                      </ul>  
+                </li>     
+
+            </template>
+            
+        </ul>
+
     </div>
 </template>
 
@@ -13,6 +45,7 @@ export default {
   data() {
       return {
           siteMenu : [],
+          siteMenuShow : false,
       }
   },
 
