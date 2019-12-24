@@ -1,7 +1,6 @@
 <template>
   <div id="app-container" class="app-container" >
 
-    
      <!-- <div style='grid-area: top /  left / height / width ; border:2px green solid'>1111</div> -->
      <div class="header-container" >
           <img src="./assets/img/logo.png" />
@@ -33,12 +32,12 @@
 </template>
 
 <script>
-import ServicesLoader from "@/mixins/ServicesLoader";
+import MixinsLoader from "@/mixins/MixinsLoader";
 import LeftSidebar    from "@/components/LeftSidebar";
 
 export default {
   name: "App",
-  mixins: [ServicesLoader],
+  mixins: [MixinsLoader],
   data() {
       return {
          

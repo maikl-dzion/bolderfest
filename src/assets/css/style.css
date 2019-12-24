@@ -56,3 +56,17 @@ body {
 .footer-container {
     grid-area: 28  /  1  / span 24  / span 30;
 }
+
+
+/**********************/
+/*     transition    */
+
+.siteMenu-enter-active, 
+.siteMenu-leave-active {
+    transition: opacity .8s;
+}
+
+.siteMenu-enter, 
+.siteMenu-leave-to  {
+   opacity: 0;
+}
