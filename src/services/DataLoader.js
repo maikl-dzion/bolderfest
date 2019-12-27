@@ -11,6 +11,7 @@ const ServicesLoader = {
 
         // -- Получить меню сайтов
         getSiteMenu() {
+            // debugger;
             let uri = '/MainBolderfest/siteMenu';
             this.http(uri).then(resp => {
                 this.siteMenu = resp;

@@ -42,15 +42,14 @@
 </template>
 
 <script>
-import MixinsLoader from "@/mixins/MixinsLoader";
+import Services from "@/services";
 // import StoreServices  from "@/mixins/StoreServices";
 
 export default {
   name: "LeftSidebar",
-  mixins: [MixinsLoader],
+  mixins: [Services],
   data() {
       return {
-          // siteMenu : [],
           siteMenuShow : false,
       }
   },
@@ -60,13 +59,6 @@ export default {
   },
 
   methods: {
-
-    //   getSiteMenu() {
-    //         let uri = '/MainBolderfest/siteMenu';
-    //         this.http(uri).then(resp => {
-    //             this.siteMenu = resp;
-    //         });       
-    //   }
 
   },
 

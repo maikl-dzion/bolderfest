@@ -1,10 +1,10 @@
 <template>
-  <div id="app-container" class="app-container" >
+  <div id="app-wrapper" class="app-wrapper" >
 
      <!-- <div style='grid-area: top /  left / height / width ; border:2px green solid'>1111</div> -->
-     <div class="header-container" >
+     <!-- <div class="header-container" >
           <img src="./assets/img/logo.png" />
-     </div>
+     </div> -->
 
     <!-- 
       <div id="nav">
@@ -12,7 +12,7 @@
       <router-link to="/about">About</router-link>
     </div>   -->
 
-    <div class="left-sidebar"  >
+    <!-- <div class="left-sidebar"  >
          <LeftSidebar/>
     </div>
 
@@ -26,18 +26,20 @@
 
     <div class="footer-container"  >
          footer
-    </div>
+    </div> -->
+
+     <router-view/>
 
   </div>
 </template>
 
 <script>
-import MixinsLoader from "@/mixins/MixinsLoader";
-import LeftSidebar    from "@/components/LeftSidebar";
+// import MixinsLoader from "@/mixins/MixinsLoader";
+// import LeftSidebar    from "@/components/LeftSidebar";
 
 export default {
   name: "App",
-  mixins: [MixinsLoader],
+  // mixins: [MixinsLoader],
   data() {
       return {
          
@@ -49,7 +51,7 @@ export default {
   },
 
   components: { 
-    LeftSidebar 
+     // LeftSidebar 
   },
 
 };

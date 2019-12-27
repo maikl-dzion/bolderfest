@@ -3,7 +3,7 @@ body {
    
 }
 
-.app-container {
+.page-container {
 
     display: grid;
     position: relative;
@@ -16,13 +16,12 @@ body {
 
 }
 
-.app-container div {
+.page-container div {
     /* border:1px red solid; */
 }
 
 .main-content {
     background: url(../img/about_2.jpg) left top / 100% 100% no-repeat;
-   
 }
 
 /* grid-area: top /  left / height / width    */

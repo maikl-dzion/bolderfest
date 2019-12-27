@@ -19,7 +19,7 @@ Vue.config.productionTip = false;
 
 new Vue({
   data  : {
-    apiUrl  : 'http://bolderfest.ru/USER_REST_APPLICATIONS/api.php',
+    // apiUrl  : 'http://bolderfest.ru/USER_REST_APPLICATIONS/api.php',
     EventGlobalBus,
   },
   router,

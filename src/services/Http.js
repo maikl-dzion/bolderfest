@@ -1,10 +1,19 @@
 import Axios from 'axios';
 
+Axios.defaults.headers = {
+    'Content-Type': 'application/json',
+    //  xsrfCookieName: 'XSRF-TOKEN',
+    //  xsrfHeaderName: 'X-XSRF-TOKEN',
+    // 'Access-Control-Allow-Origin': '*',
+    // 'withCredentials': true
+    // 'Authorization': 'myspecialpassword'
+};
+
 const Http = {
-    data: function () { 
-        let apiUrl = this.$parent.apiUrl;
+
+    data() { 
         return { 
-            apiUrl,
+            apiUrl : 'http://bolderfest.ru/USER_REST_APPLICATIONS/api.php',
         }
     }, 
 
@@ -16,39 +25,59 @@ const Http = {
                 Axios[method](url, data)
                     .then(response => {
                         
-                            if (response.data.error) {
-                                let message = 'Http : "response.data.error" (Ошибка данных на сервере) ';
-                                this.httpError( response.data.error, message);
-                                reject(response.data.error);
-                                return false;
-                            } 
+                        let result = this.httpResponseHandler(response, url);
+                        let respData = result.data;
+                        switch (result.status) {
+                            case 1:
+                                reject(respData);
+                                break;
+                            case 2:
+                                resolve(respData); 
+                                break;
+                        }
 
-                            if (response.data.result instanceof Object) {
-                                console.log('apiUrl:', url);
-                                resolve(response.data.result); 
-                            } else {
-                                let message = 'Http : "с сервера вернулась строка (должен json)" ';
-                                this.httpError(response, message);
-                            }
+                    }).catch(error => {
 
-                    })
-                    .catch(error => {
-
-                            let message = 'Http : "catch error" (код ответа не 200)';
-                            this.httpError(error, message);
-                            throw error;
+                        let message = 'Http : "catch error" (код ответа не 200)';
+                        this.errorShow(error, message);
+                        throw error;
 
                     });
             })
         },
 
-        httpError(data, title = '') {
-            var result = {};
-           if(title) result = { title , data};
-           else      result = data;   
-           lg(result);
+        httpResponseHandler(response, url) {
+            let result = {};
+            let status = '';
+            if (response.data.error) {
+                let message = 'Http : "response.data.error" (Ошибка данных на сервере) ';
+                this.errorShow( response.data.error, message);
+                result = { status : 1 , data : response.data.error };
+                status = 'data(error)';
+            } 
+
+            if (response.data.result instanceof Object) {
+                status = 'data(OK)';
+                result = { status : 2 , data : response.data.result };
+            } else {
+                status = 'data.result (Not Object)';
+                let message = 'Http : "с сервера вернулась строка (должен json)" ';
+                this.errorShow(response, message);
+                result = { status : 3 , data : message };
+            }  
+
+            console.log('--- apiUrl ---:', url);
+            console.log('--- HttpStatus ---:', status);
+
+            return result;
         },
 
+        errorShow(data, title = '') {
+            let result = {};
+            if(title) result = { title , data};
+            else      result = data;   
+            lg(result);
+        },
     },      
 }
 
