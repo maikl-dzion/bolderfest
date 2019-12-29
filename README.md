@@ -1,4 +1,4 @@
-# yeds
+# bolderfest
 
 ## Project setup
 ```

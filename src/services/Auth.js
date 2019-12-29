@@ -4,7 +4,6 @@ const Auth = {
         return {
             className  : 'UserController',
             authStatus : '',
-            jwt   : '',
             editUser: {},
             addUser : {},
 
@@ -36,12 +35,12 @@ const Auth = {
         login() {
 
             let postData = this.authUser;
-            let funcName = 'auth';
+            let funcName = 'login';
             let uri = '/' +this.className + '/' + funcName;
 
             this.http(uri, 'post', postData).then(resp => {
-                this.session = resp;
-                this.jwt = this.session['jwt'];
+                this.session = resp; 
+                localStorage.setItem(this.tokenName, this.session['jwt']);
                 alert('Успешная авторизация');
             });
         },
@@ -82,9 +81,8 @@ const Auth = {
             });   
        },
 
-       editUser() {
+       updateUser() {
 
-      
        },
 
     },

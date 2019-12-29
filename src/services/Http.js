@@ -14,13 +14,17 @@ const Http = {
     data() { 
         return { 
             apiUrl : 'http://bolderfest.ru/USER_REST_APPLICATIONS/api.php',
+            tokenName : 'jwt_token',
         }
     }, 
 
     methods: {
         
-        http(url, method = 'get', data = null) {
-            url = this.apiUrl + url;
+        http(url, method = 'get', data = null) {    
+
+            let jwtToken = this.getJwtToken();
+            url = this.apiUrl + url + jwtToken;
+
             return new Promise((resolve, reject) => {
                 Axios[method](url, data)
                     .then(response => {
@@ -70,6 +74,14 @@ const Http = {
             console.log('--- HttpStatus ---:', status);
 
             return result;
+        },
+
+        getJwtToken() {
+            let token = '';
+            let jwt = localStorage.getItem(this.tokenName);
+            if(jwt && jwt !== null) 
+                token = '/' + jwt;
+            return token;
         },
 
         errorShow(data, title = '') {
