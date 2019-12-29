@@ -13,6 +13,7 @@
 
     <div class="main-content">
       <div v-if="addUserForm" style="border:1px gainsboro solid; background: white; padding:5px">
+
         <form action="#" style>
           <div>
             <div class="mdl-textfield mdl-js-textfield" style="width:50%">
@@ -74,7 +75,7 @@ export default {
           role : 2,
       },
 
-    };
+    }
   },
 
   created() {

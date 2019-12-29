@@ -50,11 +50,11 @@
 
                         <div class="form-group" >
                             <label for="username">Логин</label>
-                            <input v-model="auth.login" type="text" id="username" name="username" required="required" />
+                            <input v-model="authUser.login" type="text" id="username" name="username" required="required" />
                         </div>
                         <div class="form-group">
                             <label for="password">Пароль</label>
-                            <input v-model="auth.password" type="password" id="password" name="password" required="required" />
+                            <input v-model="authUser.password" type="password" id="password" name="password" required="required" />
                         </div>
 
                         <!-- <div class="form-group">
@@ -65,7 +65,7 @@
                         </div> -->
 
                         <div class="form-group">
-                            <button @click="authSend" type="button" >Log In</button>
+                            <button @click="login" type="button" >Log In</button>
                         </div>
 
                     </div>
@@ -82,22 +82,28 @@
                     <form>
                         <div class="form-group">
                             <label for="username">Username</label>
-                            <input type="text" id="username" name="username" required="required" />
+                            <input v-model="addUser.username" type="text" id="username" name="username" required="required" />
                         </div>
+
+                        <div class="form-group">
+                            <label for="username">Login</label>
+                            <input v-model="addUser.login" type="text" id="login" name="login" required="required" />
+                        </div>
+
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" id="password" name="password" required="required" />
+                            <input v-model="addUser.password" type="password" id="password" name="password" required="required" />
                         </div>
                         <div class="form-group">
                             <label for="cpassword">Confirm Password</label>
-                            <input type="password" id="cpassword" name="cpassword" required="required" />
+                            <input v-model="addUser.confirm_pwd" type="password" id="cpassword" name="cpassword" required="required" />
                         </div>
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required="required" />
+                            <input v-model="addUser.email" type="email" id="email" name="email" required="required" />
                         </div>
                         <div class="form-group">
-                            <button type="submit">Register</button>
+                            <button @click="registerUser" type="submit">Register</button>
                         </div>
                     </form>
                 </div>
@@ -124,11 +130,13 @@ export default {
   data() {
     return {
         formStatus : 'auth',
-    };
+    }
   },
 
   created() {},
+
   methods: {},
+  
   components: {}
 
 };
