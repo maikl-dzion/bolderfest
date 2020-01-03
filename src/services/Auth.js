@@ -71,19 +71,19 @@ const Auth = {
             });
         },
 
-        registerUser() {
-            let funcName = 'register';
+        createUser() {
+            let funcName = 'createUser';
             let uri      = '/' +this.className + '/' + funcName;
             let postData = this.addUser;
             this.http(uri, 'post', postData).then(resp => {
                 // let result = resp;
                 alert('Успешная регистрация');
             });   
-       },
+        },
 
-       updateUser() {
+        updateUser() {
 
-       },
+        },
 
     },
 

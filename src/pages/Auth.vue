@@ -103,7 +103,7 @@
                             <input v-model="addUser.email" type="email" id="email" name="email" required="required" />
                         </div>
                         <div class="form-group">
-                            <button @click="registerUser" type="submit">Register</button>
+                            <button @click="createUser" type="submit">Register</button>
                         </div>
                     </form>
                 </div>
