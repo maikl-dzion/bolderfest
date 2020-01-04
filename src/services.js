@@ -3,6 +3,7 @@ import Http from "@/services/Http";
 import DataLoader from "@/services/DataLoader";
 import EventBus from "@/services/EventBus";
 import Auth from "@/services/Auth";
+import Debug from "@/services/Debug";
 
 const ServicesLoader = {
 
@@ -12,6 +13,7 @@ const ServicesLoader = {
         DataLoader, 
         EventBus,
         Auth,
+        Debug,
     ],
 
     data() {

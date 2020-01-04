@@ -88,7 +88,7 @@ const Http = {
             let result = {};
             if(title) result = { title , data};
             else      result = data;   
-            lg(result);
+            this.lg(result);
         },
     },      
 }
