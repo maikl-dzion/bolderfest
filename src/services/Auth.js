@@ -2,7 +2,7 @@
 const Auth = {
     data() {
         return {
-            className  : 'UserController',
+            className  : 'UserClass',
             authStatus : '',
             editUser: {},
             addUser : {},
@@ -11,9 +11,9 @@ const Auth = {
                 login: '',
                 username: '',
                 password: '',
+                cpassword : '',
                 email: '',
                 role: 2,
-                confirm_pwd : '',
             },
 
             authUser: {

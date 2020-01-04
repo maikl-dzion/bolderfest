@@ -90,6 +90,7 @@ const Http = {
             else      result = data;   
             this.lg(result);
         },
+        
     },      
 }
 
